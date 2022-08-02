@@ -19,7 +19,7 @@ object Problem1:
     case Success(value) => ZIO.succeed(value)
     case Failure(e) => ZIO.fail(throw new RuntimeException(s"[P1 => error]: improve getOrdinal Method $e"))
 
-  def p1Program(numberInput: String) =
+  def p1Program(numberInput: String): IO[Throwable, String] =
     for
       int <- getInt(numberInput)
       ordinal <- getOrdinal(int)
