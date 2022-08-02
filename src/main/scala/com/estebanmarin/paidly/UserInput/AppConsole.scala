@@ -7,7 +7,7 @@ object AppConsole:
   def getInputFromUser(message: String): IO[Throwable,String] =
     for
       _ <- Console.printLine(message)
-      input: String <- Console.readLine("Type : ")
+      input: String <- Console.readLine("Input : ")
     yield input
 
   def print(message: String): IO[Throwable, Unit]  =
