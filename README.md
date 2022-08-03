@@ -8,6 +8,11 @@ My proudest achievement is getting comfortable doing Functional Scala because it
 
 I have learned that: everything in life is hard work, resilience and a group effort, but it has to be done with love. 
 
+### Run the code 
+```shell
+$ paidly> sbt run
+```
+
 ### Problem 1
 Write a function that takes an Integer and returns it as a string with the correct ordinal indicator suffix (in English). Examples: 1 => 1st, 2 => 2nd.
 
