@@ -16,7 +16,7 @@ object Problem3:
       case Success(v) => ZIO.succeed(true)
       case Failure(e) => ZIO.fail(throw new RuntimeException(s"[P-3] Provide valid email"))
 
-  private def obfuscateEmailUtil(email: String) = ZIO.succeed {
+  private def obfuscateEmailUtil(email: String): Task[String] = ZIO.attempt {
     val temp: List[String] = email.split('@').toList
     val ob = temp(0).head
     val ob2 = temp(0).tail.reverse.head
@@ -26,6 +26,22 @@ object Problem3:
 
   def obfuscateEmail(stg: String): IO[Throwable, String] =
     for
-      validEmail <- isValid(stg)
+      _ <- isValid(stg)
       obfEmail <- obfuscateEmailUtil(stg)
     yield obfEmail
+
+  private def checkChar(f: Char) =
+    if f.isDigit then '*'
+    else if f == ' ' then '-'
+    else throw new RuntimeException("[P-5] Provide a valid phone number")
+
+  def obfsPhone(stg: String): IO[Throwable, String] =
+    Try {
+      if stg.startsWith("+") && stg.size >= 9  then
+        val stgTail = stg.tail.reverse.take(6).reverse.map(c => if c == ' ' then '-' else c)
+        val stgHead = stg.tail.drop(stg.size - 6).map(checkChar)
+        s"+$stgHead$stgTail"
+      else throw new RuntimeException(s"[P-5] provide valid phone")
+    } match
+      case Success(v) => ZIO.succeed(v)
+      case Failure(e) => ZIO.fail(throw new RuntimeException(s"[P-5] provide valid phone"))

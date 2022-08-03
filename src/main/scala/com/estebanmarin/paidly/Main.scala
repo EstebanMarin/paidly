@@ -16,14 +16,17 @@ object PaidlyZIOapp extends ZIOAppDefault:
       // p2InputA <- AppConsole.getInputFromUser("[P-2] Provide date1 in dd-mm-yyyy format")
       // p2InputB <- AppConsole.getInputFromUser("[P-2] Provide date2 in dd-mm-yyyy format")
       // p2Result <- Problem2.getWeekdayInterval(p2InputA, p2InputB)
-      p3InputA <- AppConsole.getInputFromUser("[P-2] Provide an email")
-      p3EmailObf <- Problem3.obfuscateEmail(p3InputA)
-      _ <- AppConsole.print(p3EmailObf)
+      // p3InputA <- AppConsole.getInputFromUser("[P-3/4] Provide an email")
+      // p4EmailObfResult <- Problem3.obfuscateEmail(p3InputA)
+      // _ <- AppConsole.print(s"[P-4] email obfuscation => $p4EmailObfResult")
+      p5PhoneInput <- AppConsole.getInputFromUser("[P-3/5] Provide an phone")
+      p5PhoneObs <- Problem3.obfsPhone(p5PhoneInput)
+      _ <- AppConsole.print(s"[P-5] phone obfuscation => $p5PhoneObs")
     yield ()
 
   def run = intervew.provide(
     AppConsole.live,
     Problem1.live,
     Problem2.live,
-    Problem3.live
+    Problem3.live,
   )
