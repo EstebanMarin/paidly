@@ -1,6 +1,13 @@
 #Hello I am Esteban Marin
 
-Here are the questions:
+Here are the answers to the questions:
+##Problem 6
+Write a short paragraph about your proudest achievement. Can you describe it? What was your role in it? Why is it important to you and what have you learnt from it?
+
+My proudest achievement is getting comfortable doing Functional Scala because it has been the hardest thing I've done in my career. It has though me lovely abstract ideas and has presented me with an inviting, inclusive open-source community. Having this in my life has been life-changing. 
+
+I have learned that: everything in life is hard work, resilience and a group effort, but it has to be done with love. 
+
 ##Problem 1
 Write a function that takes an Integer and returns it as a string with the correct ordinal indicator suffix (in English). Examples: 1 => 1st, 2 => 2nd.
 
@@ -17,9 +24,3 @@ Emails: emails need to be in a valid email format. To obfuscate it, it should be
 Phone numbers: a phone number consists of at least 9 digits (0-9) and may contain these two characters (‘ ‘, ‘+’) where ‘+’ is only accepted when is the first character. To obfuscate it, spaces (‘ ‘) are converted to dashes (‘-’), any digit is converted to an asterisk (‘*’) except for the last 4, which remain unchanged and the plus sign (‘+’) also remains unchanged (if present). Example: +44 123 456 789 => +**-***-**6-789.
 
  
-##Problem 6
-Write a short paragraph about your proudest achievement. Can you describe it? What was your role in it? Why is it important to you and what have you learnt from it?
-
- 
-
-Good luck and do not hesitate to contact us if you have any doubt.
