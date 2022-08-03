@@ -10,12 +10,13 @@ import com.estebanmarin.paidly.Problem3.*
 object PaidlyZIOapp extends ZIOAppDefault:
   val intervew: ZIO[AppConsole & Problem1 & Problem2 & Problem3, Throwable, Unit] =
     for
-      p1Input <- AppConsole.getInputFromUser("[P-1] Input: ")
+      p1Input <- AppConsole.getInputFromUser("[P-1] provide an Integer: ")
       p1Result <- Problem1.p1Program(p1Input)
       _ <- AppConsole.print(s"[P-1] result => $p1Result")
       p2InputA <- AppConsole.getInputFromUser("[P-2] Provide date1 in dd-mm-yyyy format")
       p2InputB <- AppConsole.getInputFromUser("[P-2] Provide date2 in dd-mm-yyyy format")
       p2Result <- Problem2.getWeekdayInterval(p2InputA, p2InputB)
+      _ <- AppConsole.print(s"[P-2] result => $p2Result")
       p3InputA <- AppConsole.getInputFromUser("[P-3/4] Provide an email")
       p4EmailObfResult <- Problem3.obfuscateEmail(p3InputA)
       _ <- AppConsole.print(s"[P-4] email obfuscation => $p4EmailObfResult")
